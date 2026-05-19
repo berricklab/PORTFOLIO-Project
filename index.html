@@ -3,7 +3,1302 @@
 <head>
 
 <meta charset="UTF-8">
+<meta<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
 <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Tetsuya Kuroko | Front-End Engineer</title>
+
+<meta
+  name="description"
+  content="Front-End Engineer building scalable, high-performance, and accessible web applications."
+>
+
+<meta
+  name="keywords"
+  content="Frontend Developer, React, TypeScript, Portfolio, Kigali"
+>
+
+<meta
+  name="author"
+  content="Tetsuya Kuroko"
+>
+
+<meta
+  name="robots"
+  content="index, follow"
+>
+
+<meta
+  name="theme-color"
+  content="#020617"
+>
+
+<!-- OPEN GRAPH -->
+
+<meta
+  property="og:title"
+  content="Tetsuya Kuroko Portfolio"
+>
+
+<meta
+  property="og:description"
+  content="Front-End Engineer building scalable and accessible web applications."
+>
+
+<meta
+  property="og:type"
+  content="website"
+>
+
+<meta
+  property="og:image"
+  content="preview.jpg"
+>
+
+<meta
+  property="og:url"
+  content="https://yourdomain.com"
+>
+
+<!-- TWITTER -->
+
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
+
+<meta
+  name="twitter:title"
+  content="Tetsuya Kuroko Portfolio"
+>
+
+<meta
+  name="twitter:description"
+  content="Front-End Engineer building scalable and accessible web applications."
+>
+
+<meta
+  name="twitter:image"
+  content="preview.jpg"
+>
+
+<link
+  rel="canonical"
+  href="https://yourdomain.com"
+>
+
+<link
+  rel="icon"
+  href="favicon.ico"
+>
+
+<!-- PRELOAD HERO IMAGE -->
+
+<link
+  rel="preload"
+  as="image"
+  href="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=60"
+>
+
+<style>
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root {
+
+  --bg: #020617;
+  --card: #0f172a;
+  --primary: #38bdf8;
+  --text: #f8fafc;
+  --dim: #b6c2d1;
+  --border: rgba(255,255,255,.08);
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+
+  --fs-xs: .875rem;
+  --fs-sm: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 2rem;
+  --fs-xl: clamp(2.8rem, 7vw, 5rem);
+
+  --shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.skip-link {
+
+  position: absolute;
+  left: -999px;
+  top: 0;
+
+  background: white;
+  color: black;
+
+  padding: 1rem;
+  z-index: 9999;
+
+}
+
+.skip-link:focus {
+  left: 20px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container {
+
+  width: 100%;
+  max-width: 1100px;
+
+  padding-inline: 20px;
+  margin-inline: auto;
+
+}
+
+.section-spacing {
+  padding-block: var(--space-6);
+}
+
+.section-title {
+  margin-bottom: var(--space-5);
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+.text-dim {
+  color: var(--dim);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 28px;
+
+  background: var(--primary);
+  color: #000;
+
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+
+  position: sticky;
+  top: 0;
+
+  background: rgba(2,6,23,.92);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--border);
+
+  z-index: 1000;
+
+}
+
+.nav-wrapper {
+
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.logo {
+
+  text-decoration: none;
+
+  font-size: 1.4rem;
+  font-weight: 800;
+
+}
+
+.nav-links {
+
+  display: flex;
+  gap: 1.5rem;
+
+  list-style: none;
+
+}
+
+.nav-links a {
+
+  text-decoration: none;
+  color: var(--dim);
+
+  transition: color .2s ease;
+
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.menu-toggle {
+
+  display: none;
+
+  background: transparent;
+  border: none;
+
+  color: white;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+  min-height: 92vh;
+
+  display: grid;
+  place-items: center;
+
+}
+
+.hero-grid {
+
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+
+  gap: 60px;
+  align-items: center;
+
+}
+
+.hero-title {
+
+  font-size: var(--fs-xl);
+  line-height: 1.05;
+
+  margin-bottom: var(--space-4);
+
+}
+
+.hero-description {
+
+  max-width: 600px;
+
+  margin-bottom: var(--space-4);
+
+  color: var(--dim);
+  font-size: var(--fs-md);
+
+}
+
+.profile-frame {
+
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--border);
+
+  aspect-ratio: 6 / 7;
+
+  box-shadow: var(--shadow);
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.services-grid,
+.skills-grid {
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px,1fr));
+
+}
+
+.card {
+
+  background: var(--card);
+
+  padding: var(--space-4);
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid var(--border);
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease;
+
+}
+
+.card:hover {
+
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(56,189,248,.4);
+
+}
+
+.card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.card p {
+  color: var(--dim);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 50px;
+  align-items: center;
+
+  margin-bottom: var(--space-6);
+
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+.project-image {
+
+  overflow: hidden;
+
+  border-radius: var(--radius-md);
+
+  aspect-ratio: 7 / 5;
+
+  border: 1px solid var(--border);
+
+}
+
+.project-title {
+
+  font-size: 1.8rem;
+
+  margin-bottom: var(--space-2);
+
+}
+
+.project p {
+
+  color: var(--dim);
+
+  margin-bottom: var(--space-3);
+
+}
+
+.tech-stack {
+
+  margin-bottom: var(--space-3);
+
+  color: var(--primary);
+
+  font-size: .95rem;
+  font-weight: 600;
+
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+
+  border-left: 2px solid var(--primary);
+
+  padding-left: var(--space-4);
+
+}
+
+.timeline-item {
+  margin-bottom: var(--space-5);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item span {
+
+  color: var(--primary);
+
+  font-size: .95rem;
+  font-weight: 600;
+
+}
+
+.timeline-item h3 {
+  margin-top: .5rem;
+}
+
+.timeline-item p {
+
+  color: var(--dim);
+
+  margin-top: 1rem;
+
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+
+  background: var(--card);
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--border);
+
+  padding: 3rem;
+
+}
+
+.form-grid {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1rem;
+
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+
+  display: block;
+
+  margin-bottom: .5rem;
+
+  color: var(--dim);
+
+  font-size: .95rem;
+
+}
+
+input,
+textarea {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: var(--radius-sm);
+
+  border: 1px solid transparent;
+
+  background: #1e293b;
+  color: white;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease;
+
+}
+
+input:focus,
+textarea:focus {
+
+  border-color: var(--primary);
+
+  outline: none;
+
+}
+
+textarea {
+
+  resize: vertical;
+  min-height: 140px;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+  padding: 40px 0;
+
+  border-top: 1px solid var(--border);
+
+  text-align: center;
+
+}
+
+footer p {
+  color: var(--dim);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero-grid,
+  .project,
+  .form-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .hero {
+    padding-block: 5rem;
+  }
+
+  .nav-links {
+
+    position: absolute;
+
+    top: 72px;
+    left: 0;
+
+    width: 100%;
+
+    flex-direction: column;
+
+    background: #020617;
+
+    padding: 1.5rem 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: none;
+
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .section-spacing {
+    padding-block: 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .contact-box {
+    padding: 2rem;
+  }
+
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+
+    animation: none !important;
+    transition: none !important;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a
+  href="#main-content"
+  class="skip-link"
+>
+  Skip to content
+</a>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <div class="container nav-wrapper">
+
+    <a
+      href="#"
+      class="logo"
+      aria-label="Homepage"
+    >
+      TETSUYA<span class="highlight">.</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      Menu
+    </button>
+
+    <ul
+      class="nav-links"
+      id="mobile-menu"
+    >
+
+      <li>
+        <a href="#services">Services</a>
+      </li>
+
+      <li>
+        <a href="#skills">Skills</a>
+      </li>
+
+      <li>
+        <a href="#work">Portfolio</a>
+      </li>
+
+      <li>
+        <a href="#experience">Experience</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+
+<!-- MAIN -->
+
+<main
+  id="main-content"
+  class="container"
+>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-grid">
+
+      <div>
+
+        <p class="highlight">
+          Front-End Engineer • Kigali, Rwanda
+        </p>
+
+        <h1 class="hero-title">
+          Engineering
+          <span class="highlight">
+            Fast, Scalable & Accessible
+          </span>
+          Web Applications
+        </h1>
+
+        <p class="hero-description">
+          I design and develop responsive,
+          high-performance digital experiences
+          focused on scalability, accessibility,
+          and modern engineering standards.
+        </p>
+
+        <a
+          href="#work"
+          class="btn"
+          aria-label="View portfolio projects"
+        >
+          View Portfolio
+        </a>
+
+      </div>
+
+      <div class="profile-frame">
+
+        <img
+          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=60"
+          alt="Professional portrait of front-end engineer Tetsuya Kuroko"
+          width="600"
+          height="700"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- SERVICES -->
+
+  <section
+    id="services"
+    class="section-spacing"
+    aria-labelledby="services-title"
+  >
+
+    <h2
+      id="services-title"
+      class="section-title"
+    >
+      Services
+    </h2>
+
+    <div class="grid services-grid">
+
+      <article class="card">
+
+        <h3>
+          Frontend Development
+        </h3>
+
+        <p>
+          Modern React, Next.js,
+          and TypeScript applications
+          with scalable architecture.
+        </p>
+
+      </article>
+
+      <article class="card">
+
+        <h3>
+          UI/UX Engineering
+        </h3>
+
+        <p>
+          Responsive and accessible interfaces
+          focused on usability and consistency.
+        </p>
+
+      </article>
+
+      <article class="card">
+
+        <h3>
+          Performance Optimization
+        </h3>
+
+        <p>
+          Improving speed, accessibility,
+          SEO, and mobile performance.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section
+    id="skills"
+    class="section-spacing"
+    aria-labelledby="skills-title"
+  >
+
+    <h2
+      id="skills-title"
+      class="section-title"
+    >
+      Technical Skills
+    </h2>
+
+    <div class="grid skills-grid">
+
+      <article class="card">
+
+        <h3>
+          Frontend
+        </h3>
+
+        <p>
+          React, Next.js, JavaScript, TypeScript
+        </p>
+
+      </article>
+
+      <article class="card">
+
+        <h3>
+          Backend
+        </h3>
+
+        <p>
+          Node.js, Express, PostgreSQL
+        </p>
+
+      </article>
+
+      <article class="card">
+
+        <h3>
+          Tools
+        </h3>
+
+        <p>
+          Git, GitHub, Docker, Figma
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section
+    id="work"
+    class="section-spacing"
+    aria-labelledby="work-title"
+  >
+
+    <h2
+      id="work-title"
+      class="section-title"
+    >
+      Selected Projects
+    </h2>
+
+    <article class="project">
+
+      <div class="project-image">
+
+        <img
+          src="https://media.istockphoto.com/id/1072844692/photo/aerial-view-of-colorful-container-terminal.webp?a=1&b=1&s=612x612&w=0&k=20&c=gZe_RsWhuI1QZxMqF9si70hN8n7mMu8r-S8LDfEhay4="
+          alt="Dashboard interface for Kigali Logistics Hub platform"
+          loading="lazy"
+          decoding="async"
+          width="700"
+          height="500"
+        >
+
+      </div>
+
+      <div>
+
+        <h3 class="project-title">
+          Kigali Logistics Hub
+        </h3>
+
+        <div class="tech-stack">
+          React • Node.js • PostgreSQL
+        </div>
+
+        <p>
+          Built a logistics management platform
+          supporting route tracking, analytics,
+          and real-time delivery updates.
+        </p>
+
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer external"
+          class="highlight"
+        >
+          Explore Project →
+        </a>
+
+      </div>
+
+    </article>
+
+    <article class="project">
+
+      <div class="project-image">
+
+        <img
+          src="https://plus.unsplash.com/premium_photo-1682756540097-6a887bbcf9b0?w=600&auto=format&fit=crop&q=60"
+          alt="AI-powered weather forecasting platform interface"
+          loading="lazy"
+          decoding="async"
+          width="700"
+          height="500"
+        >
+
+      </div>
+
+      <div>
+
+        <h3 class="project-title">
+          Ikirere AI
+        </h3>
+
+        <div class="tech-stack">
+          Python • React • AI Analytics
+        </div>
+
+        <p>
+          AI-powered forecasting system helping
+          farmers predict local climate conditions.
+        </p>
+
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer external"
+          class="highlight"
+        >
+          Explore Project →
+        </a>
+
+      </div>
+
+    </article>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section
+    id="experience"
+    class="section-spacing"
+    aria-labelledby="experience-title"
+  >
+
+    <h2
+      id="experience-title"
+      class="section-title"
+    >
+      Experience Timeline
+    </h2>
+
+    <div class="timeline">
+
+      <article class="timeline-item">
+
+        <span>
+          2025 — Present
+        </span>
+
+        <h3>
+          Senior Front-End Engineer
+        </h3>
+
+        <p>
+          Leading development of scalable
+          web applications focused on
+          performance and accessibility.
+        </p>
+
+      </article>
+
+      <article class="timeline-item">
+
+        <span>
+          2023 — 2025
+        </span>
+
+        <h3>
+          UI/UX Developer
+        </h3>
+
+        <p>
+          Designed and implemented responsive
+          interfaces for enterprise-level
+          digital products.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section
+    id="contact"
+    class="section-spacing"
+    aria-labelledby="contact-title"
+  >
+
+    <div class="contact-box">
+
+      <h2
+        id="contact-title"
+        class="section-title"
+      >
+        Let's Work Together
+      </h2>
+
+      <form
+        action="/contact"
+        method="POST"
+        novalidate
+      >
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label for="name">
+              Full Name
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="John Doe"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="example@email.com"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="message">
+            Project Details
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            minlength="20"
+            placeholder="Tell me about your project..."
+            required
+          ></textarea>
+
+        </div>
+
+        <button
+          class="btn"
+          type="submit"
+        >
+          Send Inquiry
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <p>
+      © 2026 Tetsuya Kuroko.
+      Designed and developed in Kigali, Rwanda.
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- MOBILE MENU SCRIPT -->
+
+<script>
+
+const menuToggle =
+  document.querySelector(".menu-toggle");
+
+const navLinks =
+  document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+  const expanded =
+    menuToggle.getAttribute("aria-expanded") === "true";
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    !expanded
+  );
+
+  navLinks.classList.toggle("active");
+
+});
+
+</script>
+
+</body>
+</html>
 name="viewport"
 content="width=device-width, initial-scale=1.0"
 >
