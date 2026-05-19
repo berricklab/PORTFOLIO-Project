@@ -1,16 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Tetsuya Kuroko | Front-End Engineer</title>
 
 <meta
 name="description"
-content="Front-End Engineer specializing in scalable and responsive web applications."
+content="Front-End Engineer building scalable, high-performance, and accessible web applications."
 >
 
 <meta
@@ -18,13 +20,36 @@ name="keywords"
 content="Frontend Developer, React, TypeScript, Portfolio, Kigali"
 >
 
-<meta name="author" content="Tetsuya Kuroko">
+<meta
+name="author"
+content="Tetsuya Kuroko"
+>
 
-<!-- Preload Hero Image -->
+<meta
+property="og:title"
+content="Tetsuya Kuroko Portfolio"
+>
+
+<meta
+property="og:description"
+content="Front-End Engineer building scalable and high-performance web applications."
+>
+
+<meta
+property="og:type"
+content="website"
+>
+
+<link
+rel="icon"
+href="favicon.ico"
+>
+
+<!-- PRELOAD HERO IMAGE -->
 <link
 rel="preload"
 as="image"
-href="images/profile.webp"
+href="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=60"
 >
 
 <style>
@@ -44,11 +69,17 @@ href="images/profile.webp"
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -58,7 +89,7 @@ img {
 }
 
 .container {
-  width: min(1120px, 92%);
+  width: min(1100px, calc(100% - 40px));
   margin: auto;
 }
 
@@ -66,7 +97,9 @@ section {
   padding: 90px 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.1;
 }
 
@@ -86,6 +119,11 @@ h1, h2, h3 {
   border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
+  transition: .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 /* NAVIGATION */
@@ -122,6 +160,7 @@ nav {
   color: var(--dim);
   text-decoration: none;
   font-size: .95rem;
+  transition: .2s ease;
 }
 
 .nav-links a:hover {
@@ -256,19 +295,36 @@ header {
   margin-bottom: 1rem;
 }
 
+label {
+  display: block;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+  color: var(--dim);
+}
+
 input,
 textarea {
   width: 100%;
   padding: 14px;
   background: #1e293b;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 10px;
   color: white;
+  transition: .2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
 }
 
 textarea {
   margin-bottom: 1rem;
+  resize: vertical;
 }
+
+/* FOOTER */
 
 footer {
   padding: 40px 0;
@@ -300,12 +356,29 @@ section {
 
 }
 
+@media (max-width: 600px) {
+
+.hero-title {
+  font-size: 2.4rem;
+}
+
+.contact-box {
+  padding: 2rem;
+}
+
+section {
+  padding: 60px 0;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
+
 <div class="container nav-wrapper">
 
 <a href="#" class="logo">
@@ -313,17 +386,37 @@ TETSUYA<span class="highlight">.</span>
 </a>
 
 <ul class="nav-links">
-<li><a href="#services">Services</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#work">Portfolio</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#contact">Contact</a></li>
+
+<li>
+<a href="#services">Services</a>
+</li>
+
+<li>
+<a href="#skills">Skills</a>
+</li>
+
+<li>
+<a href="#work">Portfolio</a>
+</li>
+
+<li>
+<a href="#experience">Experience</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
 </ul>
 
 </div>
+
 </nav>
 
-<main class="container">
+<main
+class="container"
+id="main-content"
+>
 
 <header>
 
@@ -336,18 +429,24 @@ Front-End Engineer • Kigali, Rwanda
 </p>
 
 <h1 class="hero-title">
-Building
-<span class="highlight">High-Performance</span>
-Digital Products
+Engineering
+<span class="highlight">
+Fast, Scalable & Accessible
+</span>
+Web Applications
 </h1>
 
 <p>
-I design and develop scalable, responsive,
-and accessible web applications focused
-on performance and modern user experience.
+I design and develop responsive,
+high-performance digital experiences
+focused on scalability, accessibility,
+and modern engineering standards.
 </p>
 
-<a href="#work" class="btn">
+<a
+href="#work"
+class="btn"
+>
 View Portfolio
 </a>
 
@@ -356,10 +455,11 @@ View Portfolio
 <div class="profile-frame">
 
 <img
-src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7"
-alt="Tetsuya Kuroko"
+src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=60"
+alt="Professional portrait of front-end engineer Tetsuya Kuroko"
 width="600"
 height="700"
+loading="eager"
 fetchpriority="high"
 decoding="async"
 >
@@ -381,27 +481,43 @@ Services
 <div class="grid services-grid">
 
 <div class="card">
-<h3>Frontend Development</h3>
+
+<h3>
+Frontend Development
+</h3>
+
 <p>
-React, Next.js, and TypeScript applications
+Modern React, Next.js,
+and TypeScript applications
 with scalable architecture.
 </p>
+
 </div>
 
 <div class="card">
-<h3>UI/UX Engineering</h3>
+
+<h3>
+UI/UX Engineering
+</h3>
+
 <p>
 Responsive and accessible interfaces
 focused on usability and consistency.
 </p>
+
 </div>
 
 <div class="card">
-<h3>Performance Optimization</h3>
+
+<h3>
+Performance Optimization
+</h3>
+
 <p>
 Improving speed, accessibility,
-and mobile performance.
+SEO, and mobile performance.
 </p>
+
 </div>
 
 </div>
@@ -419,18 +535,39 @@ Technical Skills
 <div class="grid skills-grid">
 
 <div class="card">
-<h3>Frontend</h3>
-<p>React, Next.js, JavaScript, TypeScript</p>
+
+<h3>
+Frontend
+</h3>
+
+<p>
+React, Next.js, JavaScript, TypeScript
+</p>
+
 </div>
 
 <div class="card">
-<h3>Backend</h3>
-<p>Node.js, Express, PostgreSQL</p>
+
+<h3>
+Backend
+</h3>
+
+<p>
+Node.js, Express, PostgreSQL
+</p>
+
 </div>
 
 <div class="card">
-<h3>Tools</h3>
-<p>Git, GitHub, Docker, Figma</p>
+
+<h3>
+Tools
+</h3>
+
+<p>
+Git, GitHub, Docker, Figma
+</p>
+
 </div>
 
 </div>
@@ -450,8 +587,8 @@ Selected Projects
 <div class="project-image">
 
 <img
-src="https://images.unsplash.com/photo-1551288049-bbbda536339a"
-alt="Logistics Platform"
+src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=700&q=60"
+alt="Dashboard interface for Kigali Logistics Hub platform"
 loading="lazy"
 decoding="async"
 width="700"
@@ -472,10 +609,16 @@ React • Node.js • PostgreSQL
 
 <p>
 Built a logistics management platform supporting
-route tracking, analytics, and real-time delivery updates.
+route tracking, analytics,
+and real-time delivery updates.
 </p>
 
-<a href="#" class="highlight">
+<a
+href="https://github.com"
+target="_blank"
+rel="noopener noreferrer"
+class="highlight"
+>
 Explore Project →
 </a>
 
@@ -488,8 +631,8 @@ Explore Project →
 <div class="project-image">
 
 <img
-src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
-alt="AI Weather Platform"
+src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=700&q=60"
+alt="AI-powered weather forecasting platform interface"
 loading="lazy"
 decoding="async"
 width="700"
@@ -513,7 +656,12 @@ AI-powered forecasting system helping farmers
 predict local climate conditions.
 </p>
 
-<a href="#" class="highlight">
+<a
+href="https://github.com"
+target="_blank"
+rel="noopener noreferrer"
+class="highlight"
+>
 Explore Project →
 </a>
 
@@ -585,15 +733,53 @@ Let's Work Together
 
 <div class="form-grid">
 
-<input type="text" placeholder="Full Name" required>
+<div>
 
-<input type="email" placeholder="Email Address" required>
+<label for="name">
+Full Name
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="John Doe"
+required
+>
 
 </div>
 
-<textarea rows="5" placeholder="Project Details" required></textarea>
+<div>
 
-<button class="btn" type="submit">
+<label for="email">
+Email Address
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="example@email.com"
+required
+>
+
+</div>
+
+</div>
+
+<label for="message">
+Project Details
+</label>
+
+<textarea
+id="message"
+rows="5"
+placeholder="Tell me about your project..."
+required
+></textarea>
+
+<button
+class="btn"
+type="submit"
+>
 Send Inquiry
 </button>
 
