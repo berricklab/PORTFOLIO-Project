@@ -2,13 +2,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Tetsuya Kuroko | Front-End Engineer</title>
 
-<meta name="description"
-content="Front-End Engineer specializing in scalable and responsive web applications.">
+<meta
+name="description"
+content="Front-End Engineer specializing in scalable and responsive web applications."
+>
+
+<meta
+name="keywords"
+content="Frontend Developer, React, TypeScript, Portfolio, Kigali"
+>
+
+<meta name="author" content="Tetsuya Kuroko">
+
+<!-- Preload Hero Image -->
+<link
+rel="preload"
+as="image"
+href="images/profile.webp"
+>
 
 <style>
 
@@ -25,10 +42,6 @@ content="Front-End Engineer specializing in scalable and responsive web applicat
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -70,12 +83,12 @@ h1, h2, h3 {
   padding: 14px 28px;
   background: var(--primary);
   color: #000;
-  text-decoration: none;
   border-radius: 10px;
+  text-decoration: none;
   font-weight: 700;
 }
 
-/* NAV */
+/* NAVIGATION */
 
 nav {
   position: sticky;
@@ -86,7 +99,7 @@ nav {
 }
 
 .nav-wrapper {
-  height: 72px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,6 +122,10 @@ nav {
   color: var(--dim);
   text-decoration: none;
   font-size: .95rem;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
 }
 
 /* HERO */
@@ -144,7 +161,7 @@ header {
   border: 1px solid var(--border);
 }
 
-/* CARDS */
+/* GRID */
 
 .grid {
   display: grid;
@@ -202,6 +219,27 @@ header {
   font-size: .9rem;
 }
 
+/* TIMELINE */
+
+.timeline {
+  border-left: 2px solid var(--primary);
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  margin-bottom: 3rem;
+}
+
+.timeline-item span {
+  color: var(--primary);
+  font-size: .9rem;
+}
+
+.timeline-item p {
+  color: var(--dim);
+  margin-top: 1rem;
+}
+
 /* CONTACT */
 
 .contact-box {
@@ -246,19 +284,19 @@ footer p {
 
 @media (max-width: 900px) {
 
-  .hero-grid,
-  .project,
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
+.hero-grid,
+.project,
+.form-grid {
+  grid-template-columns: 1fr;
+}
 
-  .nav-links {
-    display: none;
-  }
+.nav-links {
+  display: none;
+}
 
-  section {
-    padding: 70px 0;
-  }
+section {
+  padding: 70px 0;
+}
 
 }
 
@@ -268,20 +306,21 @@ footer p {
 <body>
 
 <nav>
-  <div class="container nav-wrapper">
+<div class="container nav-wrapper">
 
-    <a href="#" class="logo">
-      TETSUYA<span class="highlight">.</span>
-    </a>
+<a href="#" class="logo">
+TETSUYA<span class="highlight">.</span>
+</a>
 
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#work">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+<ul class="nav-links">
+<li><a href="#services">Services</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#work">Portfolio</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-  </div>
+</div>
 </nav>
 
 <main class="container">
@@ -293,25 +332,23 @@ footer p {
 <div class="hero-text">
 
 <p class="highlight">
-  Front-End Engineer • Kigali, Rwanda
+Front-End Engineer • Kigali, Rwanda
 </p>
 
 <h1 class="hero-title">
-  Building
-  <span class="highlight">
-    High-Performance
-  </span>
-  Digital Products
+Building
+<span class="highlight">High-Performance</span>
+Digital Products
 </h1>
 
 <p>
-  I create scalable, responsive, and user-focused
-  web applications optimized for performance,
-  accessibility, and maintainability.
+I design and develop scalable, responsive,
+and accessible web applications focused
+on performance and modern user experience.
 </p>
 
 <a href="#work" class="btn">
-  View Portfolio
+View Portfolio
 </a>
 
 </div>
@@ -319,12 +356,12 @@ footer p {
 <div class="profile-frame">
 
 <img
-src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=60"
-alt="Profile"
-loading="eager"
-decoding="async"
+src="images/profile.webp"
+alt="Tetsuya Kuroko"
 width="600"
 height="700"
+fetchpriority="high"
+decoding="async"
 >
 
 </div>
@@ -336,7 +373,7 @@ height="700"
 <section id="services">
 
 <h2>
-  Services
+Services
 </h2>
 
 <br>
@@ -344,27 +381,27 @@ height="700"
 <div class="grid services-grid">
 
 <div class="card">
-  <h3>Frontend Development</h3>
-  <p>
-    React, Next.js, and TypeScript applications
-    with scalable architecture.
-  </p>
+<h3>Frontend Development</h3>
+<p>
+React, Next.js, and TypeScript applications
+with scalable architecture.
+</p>
 </div>
 
 <div class="card">
-  <h3>UI/UX Engineering</h3>
-  <p>
-    Responsive and accessible interfaces focused
-    on usability and consistency.
-  </p>
+<h3>UI/UX Engineering</h3>
+<p>
+Responsive and accessible interfaces
+focused on usability and consistency.
+</p>
 </div>
 
 <div class="card">
-  <h3>Optimization</h3>
-  <p>
-    Improving speed, accessibility,
-    and mobile performance.
-  </p>
+<h3>Performance Optimization</h3>
+<p>
+Improving speed, accessibility,
+and mobile performance.
+</p>
 </div>
 
 </div>
@@ -374,7 +411,7 @@ height="700"
 <section id="skills">
 
 <h2>
-  Skills
+Technical Skills
 </h2>
 
 <br>
@@ -382,18 +419,18 @@ height="700"
 <div class="grid skills-grid">
 
 <div class="card">
-  <h3>Frontend</h3>
-  <p>React, Next.js, JavaScript, TypeScript</p>
+<h3>Frontend</h3>
+<p>React, Next.js, JavaScript, TypeScript</p>
 </div>
 
 <div class="card">
-  <h3>Backend</h3>
-  <p>Node.js, Express, PostgreSQL</p>
+<h3>Backend</h3>
+<p>Node.js, Express, PostgreSQL</p>
 </div>
 
 <div class="card">
-  <h3>Tools</h3>
-  <p>Git, GitHub, Docker, Figma</p>
+<h3>Tools</h3>
+<p>Git, GitHub, Docker, Figma</p>
 </div>
 
 </div>
@@ -403,7 +440,7 @@ height="700"
 <section id="work">
 
 <h2>
-  Selected Projects
+Selected Projects
 </h2>
 
 <br><br>
@@ -413,7 +450,7 @@ height="700"
 <div class="project-image">
 
 <img
-src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=700&q=60"
+src="images/logistics.webp"
 alt="Logistics Platform"
 loading="lazy"
 decoding="async"
@@ -426,20 +463,20 @@ height="500"
 <div>
 
 <h3 class="project-title">
-  Kigali Logistics Hub
+Kigali Logistics Hub
 </h3>
 
 <div class="tech-stack">
-  React • Node.js • PostgreSQL
+React • Node.js • PostgreSQL
 </div>
 
 <p>
-  Logistics management platform supporting
-  route tracking, analytics, and real-time delivery updates.
+Built a logistics management platform supporting
+route tracking, analytics, and real-time delivery updates.
 </p>
 
 <a href="#" class="highlight">
-  Explore Project →
+Explore Project →
 </a>
 
 </div>
@@ -451,7 +488,7 @@ height="500"
 <div class="project-image">
 
 <img
-src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=700&q=60"
+src="images/ikirere.webp"
 alt="AI Weather Platform"
 loading="lazy"
 decoding="async"
@@ -464,21 +501,69 @@ height="500"
 <div>
 
 <h3 class="project-title">
-  Ikirere AI
+Ikirere AI
 </h3>
 
 <div class="tech-stack">
-  Python • React • AI Analytics
+Python • React • AI Analytics
 </div>
 
 <p>
-  AI-powered forecasting system helping farmers
-  predict local climate conditions.
+AI-powered forecasting system helping farmers
+predict local climate conditions.
 </p>
 
 <a href="#" class="highlight">
-  Explore Project →
+Explore Project →
 </a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2>
+Experience Timeline
+</h2>
+
+<br><br>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<span>
+2025 — Present
+</span>
+
+<h3>
+Senior Front-End Engineer
+</h3>
+
+<p>
+Leading development of scalable web applications
+focused on performance and accessibility.
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<span>
+2023 — 2025
+</span>
+
+<h3>
+UI/UX Developer
+</h3>
+
+<p>
+Designed and implemented responsive interfaces
+for enterprise-level digital products.
+</p>
 
 </div>
 
@@ -491,7 +576,7 @@ height="500"
 <div class="contact-box">
 
 <h2>
-  Let's Work Together
+Let's Work Together
 </h2>
 
 <br>
@@ -509,7 +594,7 @@ height="500"
 <textarea rows="5" placeholder="Project Details" required></textarea>
 
 <button class="btn" type="submit">
-  Send Inquiry
+Send Inquiry
 </button>
 
 </form>
@@ -523,35 +608,11 @@ height="500"
 <footer>
 
 <p>
-  © 2026 Tetsuya Kuroko.
-  Designed and developed in Kigali, Rwanda.
+© 2026 Tetsuya Kuroko.
+Designed and developed in Kigali, Rwanda.
 </p>
 
 </footer>
 
-<script>
-
-// Lightweight smooth scrolling
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-  link.addEventListener('click', e => {
-
-    const target = document.querySelector(
-      link.getAttribute('href')
-    );
-
-    if(target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-
-  });
-
-});
-
-</script>
-
 </body>
 </html>
-
